@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 이미지 판단 라이브 · 공격 전/후 비교</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="title">
+      <h1>🧠 AI 이미지 판단 <span class="live">LIVE</span></h1>
+      <p class="subtitle">ResNet-50 이 이미지를 한 장씩 보고 판단합니다 · 적대적 공격(adversarial attack) 전/후 비교</p>
+    </div>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <main>
+    <!-- 컨트롤 -->
+    <section class="controls">
+      <button id="playBtn" class="btn primary">▶ 재생</button>
+      <button id="prevBtn" class="btn">⏮ 이전</button>
+      <button id="nextBtn" class="btn">다음 ⏭</button>
+
+      <label class="speed">
+        속도
+        <input type="range" id="speed" min="300" max="3000" step="100" value="1200" />
+        <span id="speedVal">1.2s</span>
+      </label>
+
+      <label class="toggle">
+        <input type="checkbox" id="attackToggle" />
+        <span class="slider"></span>
+        <span class="toggle-label">공격 ON</span>
+      </label>
+
+      <div class="counter">
+        <span id="counter">0 / 0</span>
+      </div>
+    </section>
+
+    <!-- 진행 바 -->
+    <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+
+    <!-- 메인 비교 뷰 -->
+    <section class="stage">
+      <div class="panel" id="origPanel">
+        <div class="panel-head">원본 이미지 <span class="tag clean">CLEAN</span></div>
+        <div class="img-wrap"><img id="origImg" alt="original" /></div>
+        <div class="verdict" id="origVerdict"></div>
+      </div>
+
+      <div class="arrow" id="arrow">
+        <div class="noise-box">
+          <div class="panel-head small">추가된 노이즈 (증폭 표시)</div>
+          <div class="img-wrap small"><img id="noiseImg" alt="noise" /></div>
+        </div>
+        <div class="arrow-sign">➜</div>
+      </div>
+
+      <div class="panel" id="advPanel">
+        <div class="panel-head">공격당한 이미지 <span class="tag adv">ADVERSARIAL</span></div>
+        <div class="img-wrap"><img id="advImg" alt="adversarial" /></div>
+        <div class="verdict" id="advVerdict"></div>
+      </div>
+    </section>
+
+    <!-- 확률 바 (top-k) -->
+    <section class="probs">
+      <div class="prob-col">
+        <h3>원본에 대한 판단 (확신도)</h3>
+        <div id="cleanBars"></div>
+      </div>
+      <div class="prob-col">
+        <h3>공격 후 판단 (확신도)</h3>
+        <div id="advBars"></div>
+      </div>
+    </section>
+
+    <!-- 전체 요약 -->
+    <section class="summary" id="summary"></section>
+  </main>
+
+  <div id="error" class="error hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

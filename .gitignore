@@ -1,0 +1,10 @@
+# 파이썬
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# precompute.py 가 실제 GPU 로 생성하는 대용량 결과 (로컬에서만 생성)
+# 데모 데이터(make_demo_data.py)는 바로 볼 수 있도록 커밋에 포함합니다.
+# 실제 데이터로 덮어쓴 경우 커밋하지 않으려면 아래 주석을 해제하세요.
+# web/data/

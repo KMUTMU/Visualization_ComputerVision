@@ -1,0 +1,657 @@
+{
+  "attack": "ifgsm (DEMO/mock)",
+  "attack_params": {
+    "epsilon": 0.06274509803921569,
+    "epsilon_255": 16.0,
+    "steps": 10,
+    "alpha": 0.006274509803921569,
+    "momentum": 1.0
+  },
+  "model": "ResNet-50 (DEMO 데이터 — 실제 추론 아님)",
+  "device": "mock",
+  "count": 12,
+  "summary": {
+    "clean_accuracy": 75.0,
+    "adv_accuracy": 16.67,
+    "fooled": 7,
+    "fool_rate_of_correct": 77.78
+  },
+  "records": [
+    {
+      "id": 0,
+      "true_label": 0,
+      "true_name": "golden retriever",
+      "orig_img": "images/000_orig.png",
+      "adv_img": "images/000_adv.png",
+      "noise_img": "images/000_noise.png",
+      "clean": {
+        "pred_index": 3,
+        "pred_name": "Labrador retriever",
+        "correct": false,
+        "topk": [
+          {
+            "label": "Labrador retriever",
+            "index": 3,
+            "prob": 0.55
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.315
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.135
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 3,
+        "pred_name": "Labrador retriever",
+        "correct": false,
+        "fooled": false,
+        "topk": [
+          {
+            "label": "Labrador retriever",
+            "index": 3,
+            "prob": 0.6
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.28
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.12
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "true_label": 1,
+      "true_name": "tabby cat",
+      "orig_img": "images/001_orig.png",
+      "adv_img": "images/001_adv.png",
+      "noise_img": "images/001_noise.png",
+      "clean": {
+        "pred_index": 1,
+        "pred_name": "tabby cat",
+        "correct": true,
+        "topk": [
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.88
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.084
+          },
+          {
+            "label": "Egyptian cat",
+            "index": 2,
+            "prob": 0.036
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 3,
+        "pred_name": "Labrador retriever",
+        "correct": false,
+        "fooled": true,
+        "topk": [
+          {
+            "label": "Labrador retriever",
+            "index": 3,
+            "prob": 0.79
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.147
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.063
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "true_label": 2,
+      "true_name": "Egyptian cat",
+      "orig_img": "images/002_orig.png",
+      "adv_img": "images/002_adv.png",
+      "noise_img": "images/002_noise.png",
+      "clean": {
+        "pred_index": 2,
+        "pred_name": "Egyptian cat",
+        "correct": true,
+        "topk": [
+          {
+            "label": "Egyptian cat",
+            "index": 2,
+            "prob": 0.88
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.084
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.036
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 4,
+        "pred_name": "tiger cat",
+        "correct": false,
+        "fooled": true,
+        "topk": [
+          {
+            "label": "tiger cat",
+            "index": 4,
+            "prob": 0.79
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.147
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.063
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "true_label": 3,
+      "true_name": "Labrador retriever",
+      "orig_img": "images/003_orig.png",
+      "adv_img": "images/003_adv.png",
+      "noise_img": "images/003_noise.png",
+      "clean": {
+        "pred_index": 3,
+        "pred_name": "Labrador retriever",
+        "correct": true,
+        "topk": [
+          {
+            "label": "Labrador retriever",
+            "index": 3,
+            "prob": 0.88
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.084
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.036
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 5,
+        "pred_name": "beagle",
+        "correct": false,
+        "fooled": true,
+        "topk": [
+          {
+            "label": "beagle",
+            "index": 5,
+            "prob": 0.79
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.147
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.063
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "true_label": 4,
+      "true_name": "tiger cat",
+      "orig_img": "images/004_orig.png",
+      "adv_img": "images/004_adv.png",
+      "noise_img": "images/004_noise.png",
+      "clean": {
+        "pred_index": 4,
+        "pred_name": "tiger cat",
+        "correct": true,
+        "topk": [
+          {
+            "label": "tiger cat",
+            "index": 4,
+            "prob": 0.88
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.084
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.036
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 4,
+        "pred_name": "tiger cat",
+        "correct": true,
+        "fooled": false,
+        "topk": [
+          {
+            "label": "tiger cat",
+            "index": 4,
+            "prob": 0.6
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.28
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.12
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "true_label": 5,
+      "true_name": "beagle",
+      "orig_img": "images/005_orig.png",
+      "adv_img": "images/005_adv.png",
+      "noise_img": "images/005_noise.png",
+      "clean": {
+        "pred_index": 8,
+        "pred_name": "Persian cat",
+        "correct": false,
+        "topk": [
+          {
+            "label": "Persian cat",
+            "index": 8,
+            "prob": 0.55
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.315
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.135
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 8,
+        "pred_name": "Persian cat",
+        "correct": false,
+        "fooled": false,
+        "topk": [
+          {
+            "label": "Persian cat",
+            "index": 8,
+            "prob": 0.6
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.28
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.12
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "true_label": 6,
+      "true_name": "Siamese cat",
+      "orig_img": "images/006_orig.png",
+      "adv_img": "images/006_adv.png",
+      "noise_img": "images/006_noise.png",
+      "clean": {
+        "pred_index": 6,
+        "pred_name": "Siamese cat",
+        "correct": true,
+        "topk": [
+          {
+            "label": "Siamese cat",
+            "index": 6,
+            "prob": 0.88
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.084
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.036
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 8,
+        "pred_name": "Persian cat",
+        "correct": false,
+        "fooled": true,
+        "topk": [
+          {
+            "label": "Persian cat",
+            "index": 8,
+            "prob": 0.79
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.147
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.063
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "true_label": 7,
+      "true_name": "pug",
+      "orig_img": "images/007_orig.png",
+      "adv_img": "images/007_adv.png",
+      "noise_img": "images/007_noise.png",
+      "clean": {
+        "pred_index": 7,
+        "pred_name": "pug",
+        "correct": true,
+        "topk": [
+          {
+            "label": "pug",
+            "index": 7,
+            "prob": 0.88
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.084
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.036
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 9,
+        "pred_name": "collie",
+        "correct": false,
+        "fooled": true,
+        "topk": [
+          {
+            "label": "collie",
+            "index": 9,
+            "prob": 0.79
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.147
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.063
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "true_label": 8,
+      "true_name": "Persian cat",
+      "orig_img": "images/008_orig.png",
+      "adv_img": "images/008_adv.png",
+      "noise_img": "images/008_noise.png",
+      "clean": {
+        "pred_index": 8,
+        "pred_name": "Persian cat",
+        "correct": true,
+        "topk": [
+          {
+            "label": "Persian cat",
+            "index": 8,
+            "prob": 0.88
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.084
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.036
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 8,
+        "pred_name": "Persian cat",
+        "correct": true,
+        "fooled": false,
+        "topk": [
+          {
+            "label": "Persian cat",
+            "index": 8,
+            "prob": 0.6
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.28
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.12
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "true_label": 9,
+      "true_name": "collie",
+      "orig_img": "images/009_orig.png",
+      "adv_img": "images/009_adv.png",
+      "noise_img": "images/009_noise.png",
+      "clean": {
+        "pred_index": 9,
+        "pred_name": "collie",
+        "correct": true,
+        "topk": [
+          {
+            "label": "collie",
+            "index": 9,
+            "prob": 0.88
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.084
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.036
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 1,
+        "pred_name": "tabby cat",
+        "correct": false,
+        "fooled": true,
+        "topk": [
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.79
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.147
+          },
+          {
+            "label": "Egyptian cat",
+            "index": 2,
+            "prob": 0.063
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "true_label": 0,
+      "true_name": "golden retriever",
+      "orig_img": "images/010_orig.png",
+      "adv_img": "images/010_adv.png",
+      "noise_img": "images/010_noise.png",
+      "clean": {
+        "pred_index": 3,
+        "pred_name": "Labrador retriever",
+        "correct": false,
+        "topk": [
+          {
+            "label": "Labrador retriever",
+            "index": 3,
+            "prob": 0.55
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.315
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.135
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 3,
+        "pred_name": "Labrador retriever",
+        "correct": false,
+        "fooled": false,
+        "topk": [
+          {
+            "label": "Labrador retriever",
+            "index": 3,
+            "prob": 0.6
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.28
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.12
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "true_label": 1,
+      "true_name": "tabby cat",
+      "orig_img": "images/011_orig.png",
+      "adv_img": "images/011_adv.png",
+      "noise_img": "images/011_noise.png",
+      "clean": {
+        "pred_index": 1,
+        "pred_name": "tabby cat",
+        "correct": true,
+        "topk": [
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.88
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.084
+          },
+          {
+            "label": "Egyptian cat",
+            "index": 2,
+            "prob": 0.036
+          }
+        ]
+      },
+      "adv": {
+        "pred_index": 3,
+        "pred_name": "Labrador retriever",
+        "correct": false,
+        "fooled": true,
+        "topk": [
+          {
+            "label": "Labrador retriever",
+            "index": 3,
+            "prob": 0.79
+          },
+          {
+            "label": "golden retriever",
+            "index": 0,
+            "prob": 0.147
+          },
+          {
+            "label": "tabby cat",
+            "index": 1,
+            "prob": 0.063
+          }
+        ]
+      }
+    }
+  ]
+}
